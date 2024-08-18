@@ -1,0 +1,17 @@
+apiVersion: security.kubearmor.com/v1
+kind: KubeArmorPolicy
+metadata:
+  name: kubearmor-zero-trust-policy
+  namespace: default
+spec:
+  message: 'KubeArmor zero trust policy'
+  process:
+    matchDirectories:
+    - dir: /
+      recursive: true
+      action: Block
+  selector:
+    matchLabels:
+      app: my-app
+  tags:
+  - ALERT
