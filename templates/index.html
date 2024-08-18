@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebPy</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link rel="icon" type="image/svg+xml" href="{{ url_for('static', filename='Python.svg') }}">
+</head>
+<body>
+    <div class="top-bar">
+        <img src="{{ url_for('static', filename='Python.svg') }}" alt="Python Logo" class="logo">
+        <div class="brand-text">
+            <span class="main-title">WebPy</span>
+            <span class="sub-title">Python Playground</span>
+        </div>
+    </div>
+    <form method="post" action="/">
+        <div class="container">
+            <textarea name="code" rows="10" cols="30" spellcheck="false">{{code}}</textarea>
+            <pre id="output" class="output">{{result}}</pre>
+        </div>
+        <button type="submit">Run</button>
+    </form>
+</body>
+</html>

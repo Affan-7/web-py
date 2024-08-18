@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, render_template
 import io
 import sys
 
@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/', methods=['GET', 'POST'])
 def index():
     result = ""
-    code = ""
+    code = "print('Hello, World!')"
     if request.method == 'POST':
         code = request.form['code']
         sys.stdout = io.StringIO()
@@ -19,13 +19,8 @@ def index():
         finally:
             result = sys.stdout.getvalue() + sys.stderr.getvalue()
     
-    return f'''
-        <form method="post" action="/">
-            <textarea name="code" rows="10" cols="30">{code}</textarea><br>
-            <input type="submit" value="Execute">
-        </form>
-        <pre>{result}</pre>
-    '''
+    return render_template('index.html', code=code, result=result)
+
 
 if __name__ == '__main__':
     app.run(debug=True)

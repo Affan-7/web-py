@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    background-color: #1f1f1f;
+    padding: 20px;
+    color: #00ffcc;
+    font-size: 24px;
+    border-bottom: 2px solid #00ffcc;
+}
+
+.top-bar .logo {
+    height: 60px;
+    margin-right: 20px;
+}
+
+.top-bar .brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.top-bar .brand-text .main-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #00ffcc;
+}
+
+.top-bar .brand-text .sub-title {
+    font-size: 16px; /* Smaller font size for the sub-title */
+    color: #00ffcc;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px;
+}
+
+textarea {
+    width: 48%;
+    height: 400px;
+    padding: 10px;
+    border: 1px solid #333;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin: 0; /* Ensure no extra margin */
+    resize: none; /* Make textarea non-resizable */
+}
+
+.output {
+    width: 48%;
+    height: 400px;
+    padding: 10px;
+    border: 1px solid #333;
+    background-color: #1f1f1f;
+    color: #e0e0e0;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin: 0; /* Ensure no extra margin */
+    position: relative; /* Required for pseudo-element positioning */
+    font-family: monospace; /* Use a monospace font for the output */
+}
+
+.output::before {
+    content: "> Output";
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #888888;
+    font-size: 16px;
+    pointer-events: none; /* Ensure the watermark text does not interfere with user interaction */
+}
+
+.output:not(:empty)::before {
+    content: "";
+}
+
+button {
+    background-color: #00ffcc;
+    color: #121212;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 20px auto; /* Center the button and add margin */
+    display: block; /* Make the button a block element */
+    border-radius: 5px; /* Add rounded corners */
+}
+
+button:hover {
+    background-color: #00cc99;
+    transform: scale(1.05); /* Slightly enlarge the button on hover */
+}
+
+button:active {
+    background-color: #009977;
+    transform: scale(0.95); /* Slightly shrink the button on click */
+}
