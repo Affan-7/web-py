@@ -6,6 +6,11 @@ WORKDIR /app
 # Copy the application code into the container
 COPY . .
 
+# Install the PostgreSQL development packages
+RUN apt-get update && apt-get install -y \
+    gcc \
+    libpq-dev
+
 # Install the dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 

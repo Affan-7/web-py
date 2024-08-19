@@ -19,7 +19,7 @@ gunicorn -w 4 -b 0.0.0.0:80 app:app
 
 ```python
 import subprocess
-result = subprocess.run(['sudo', 'whoami'], capture_output=True, text=True)
+result = subprocess.run('whoami', shell=True, capture_output=True, text=True)
 print(result.stdout)
 print(result.stderr)
 ```
