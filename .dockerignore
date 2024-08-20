@@ -1,5 +1,6 @@
-# Ignore the .git directory
+# Ignore the git data
 .git
+.gitignore
 
 # Ignore Python cache files
 __pycache__
@@ -7,3 +8,6 @@ __pycache__
 
 # ignore database backup file
 database.sql
+
+# ignore k8s folder
+k8s/
