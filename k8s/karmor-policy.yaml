@@ -13,5 +13,3 @@ spec:
   selector:
     matchLabels:
       app: my-app
-  tags:
-  - ALERT
